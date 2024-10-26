@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Weather Summary</title>
+</head>
+<body>
+<h1>Weather Summary for: <span th:text="${city}"></span></h1>
+<table>
+    <thead>
+    <tr>
+        <th>Date</th>
+        <th>Average Temp</th>
+        <th>Max Temp</th>
+        <th>Min Temp</th>
+        <th>Dominant Condition</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="summary : ${summaries}">
+        <td th:text="${summary.date}"></td>
+        <td th:text="${summary.avgTemp}"></td>
+        <td th:text="${summary.maxTemp}"></td>
+        <td th:text="${summary.minTemp}"></td>
+        <td th:text="${summary.dominantCondition}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
